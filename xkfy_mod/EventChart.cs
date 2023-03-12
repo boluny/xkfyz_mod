@@ -19,6 +19,7 @@ namespace xkfy_mod
             InitializeComponent();
         }
 
+        private String path = PathHelper.PATH_EVENT_DATA;
         List<EventData> eventData = new List<EventData>();
         Dictionary<string, string> isHaveEvent = new Dictionary<string, string>();
 
@@ -33,7 +34,7 @@ namespace xkfy_mod
             FileHelper.LoadTable("TalkManager");
             FileHelper.LoadTable("DevelopQuestData");
 
-            string path = Application.StartupPath + "\\CustomData\\EventData.xml";
+            //string path = Application.StartupPath + "\\CustomData\\EventData.xml";
             eventData = XmlHelper.XmlDeserializeFromFile<List<EventData>>(path, Encoding.UTF8);
             if (eventData.Count <= 0)
             {
@@ -97,7 +98,7 @@ namespace xkfy_mod
                     listEvent.Add(ed);
                 }
             }
-            string path = Application.StartupPath + "\\CustomData\\EventData.xml";
+            //string path = Application.StartupPath + "\\CustomData\\EventData.xml";
             XmlHelper.XmlSerializeToFile(listEvent, path, Encoding.UTF8);
         }
 

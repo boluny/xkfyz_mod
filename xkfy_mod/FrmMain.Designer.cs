@@ -72,6 +72,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmCreate,
             this.tsCreateMOD,
@@ -84,7 +85,7 @@
             this.测试ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1335, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1780, 30);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -92,7 +93,7 @@
             // 
             this.tsmCreate.Image = global::xkfy_mod.Properties.Resources.新建__1_;
             this.tsmCreate.Name = "tsmCreate";
-            this.tsmCreate.Size = new System.Drawing.Size(84, 21);
+            this.tsmCreate.Size = new System.Drawing.Size(103, 26);
             this.tsmCreate.Text = "重新开始";
             this.tsmCreate.Click += new System.EventHandler(this.tsmCreate_Click_1);
             // 
@@ -105,34 +106,34 @@
             this.tsmSetGameInstallPath});
             this.tsCreateMOD.Image = global::xkfy_mod.Properties.Resources.生成;
             this.tsCreateMOD.Name = "tsCreateMOD";
-            this.tsCreateMOD.Size = new System.Drawing.Size(60, 21);
+            this.tsCreateMOD.Size = new System.Drawing.Size(73, 26);
             this.tsCreateMOD.Text = "生成";
             this.tsCreateMOD.Click += new System.EventHandler(this.tsCreateMOD_Click);
             // 
             // 全部生成ToolStripMenuItem
             // 
             this.全部生成ToolStripMenuItem.Name = "全部生成ToolStripMenuItem";
-            this.全部生成ToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.全部生成ToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
             this.全部生成ToolStripMenuItem.Text = "全部生成";
             this.全部生成ToolStripMenuItem.Click += new System.EventHandler(this.全部生成ToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(173, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(214, 6);
             // 
             // tsmSaveToGamePath
             // 
             this.tsmSaveToGamePath.Enabled = false;
             this.tsmSaveToGamePath.Name = "tsmSaveToGamePath";
-            this.tsmSaveToGamePath.Size = new System.Drawing.Size(176, 22);
+            this.tsmSaveToGamePath.Size = new System.Drawing.Size(217, 26);
             this.tsmSaveToGamePath.Text = "保存到游戏目录";
             this.tsmSaveToGamePath.Click += new System.EventHandler(this.生成到游戏目录ToolStripMenuItem_Click);
             // 
             // tsmSetGameInstallPath
             // 
             this.tsmSetGameInstallPath.Name = "tsmSetGameInstallPath";
-            this.tsmSetGameInstallPath.Size = new System.Drawing.Size(176, 22);
+            this.tsmSetGameInstallPath.Size = new System.Drawing.Size(217, 26);
             this.tsmSetGameInstallPath.Text = "设置游戏Mod目录";
             this.tsmSetGameInstallPath.Click += new System.EventHandler(this.tsmSetGameInstallPath_Click);
             // 
@@ -143,21 +144,21 @@
             this.tsmImportMod});
             this.tsmMods.Image = global::xkfy_mod.Properties.Resources.打开工程;
             this.tsmMods.Name = "tsmMods";
-            this.tsmMods.Size = new System.Drawing.Size(64, 21);
+            this.tsmMods.Size = new System.Drawing.Size(78, 26);
             this.tsmMods.Text = "Mod";
             // 
             // tsmOpenModFolder
             // 
             this.tsmOpenModFolder.Image = global::xkfy_mod.Properties.Resources.打开1;
             this.tsmOpenModFolder.Name = "tsmOpenModFolder";
-            this.tsmOpenModFolder.Size = new System.Drawing.Size(164, 22);
+            this.tsmOpenModFolder.Size = new System.Drawing.Size(224, 26);
             this.tsmOpenModFolder.Text = "打开Mod文件夹";
             this.tsmOpenModFolder.Click += new System.EventHandler(this.tsmOpenModFolder_Click);
             // 
             // tsmImportMod
             // 
             this.tsmImportMod.Name = "tsmImportMod";
-            this.tsmImportMod.Size = new System.Drawing.Size(164, 22);
+            this.tsmImportMod.Size = new System.Drawing.Size(224, 26);
             this.tsmImportMod.Text = "导入别人的Mod";
             this.tsmImportMod.Click += new System.EventHandler(this.tsmImportMod_Click);
             // 
@@ -165,7 +166,7 @@
             // 
             this.tsmCreateCurr.Image = global::xkfy_mod.Properties.Resources.保存;
             this.tsmCreateCurr.Name = "tsmCreateCurr";
-            this.tsmCreateCurr.Size = new System.Drawing.Size(96, 21);
+            this.tsmCreateCurr.Size = new System.Drawing.Size(119, 26);
             this.tsmCreateCurr.Text = "保存Ctrl+S";
             this.tsmCreateCurr.Click += new System.EventHandler(this.tsmCreateCurr_Click);
             // 
@@ -179,40 +180,40 @@
             this.回合信息ToolStripMenuItem});
             this.tsmExplain.Image = global::xkfy_mod.Properties.Resources.set;
             this.tsmExplain.Name = "tsmExplain";
-            this.tsmExplain.Size = new System.Drawing.Size(60, 21);
+            this.tsmExplain.Size = new System.Drawing.Size(73, 26);
             this.tsmExplain.Text = "设置";
             // 
             // tsmWriteExplain
             // 
             this.tsmWriteExplain.Image = global::xkfy_mod.Properties.Resources.set;
             this.tsmWriteExplain.Name = "tsmWriteExplain";
-            this.tsmWriteExplain.Size = new System.Drawing.Size(148, 22);
+            this.tsmWriteExplain.Size = new System.Drawing.Size(182, 26);
             this.tsmWriteExplain.Text = "自定义注释";
             this.tsmWriteExplain.Click += new System.EventHandler(this.tsmWriteExplain_Click);
             // 
             // 常用贴图ToolStripMenuItem
             // 
             this.常用贴图ToolStripMenuItem.Name = "常用贴图ToolStripMenuItem";
-            this.常用贴图ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.常用贴图ToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.常用贴图ToolStripMenuItem.Text = "常用贴图设置";
             this.常用贴图ToolStripMenuItem.Click += new System.EventHandler(this.常用贴图ToolStripMenuItem_Click);
             // 
             // 窗体表格配置ToolStripMenuItem
             // 
             this.窗体表格配置ToolStripMenuItem.Name = "窗体表格配置ToolStripMenuItem";
-            this.窗体表格配置ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.窗体表格配置ToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.窗体表格配置ToolStripMenuItem.Text = "窗体表格配置";
             this.窗体表格配置ToolStripMenuItem.Click += new System.EventHandler(this.窗体表格配置ToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(145, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(179, 6);
             // 
             // 回合信息ToolStripMenuItem
             // 
             this.回合信息ToolStripMenuItem.Name = "回合信息ToolStripMenuItem";
-            this.回合信息ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.回合信息ToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.回合信息ToolStripMenuItem.Text = "回合信息";
             this.回合信息ToolStripMenuItem.Click += new System.EventHandler(this.回合信息ToolStripMenuItem_Click);
             // 
@@ -220,7 +221,7 @@
             // 
             this.重新加载当前文件ToolStripMenuItem.Image = global::xkfy_mod.Properties.Resources.重新加载;
             this.重新加载当前文件ToolStripMenuItem.Name = "重新加载当前文件ToolStripMenuItem";
-            this.重新加载当前文件ToolStripMenuItem.Size = new System.Drawing.Size(132, 21);
+            this.重新加载当前文件ToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
             this.重新加载当前文件ToolStripMenuItem.Text = "重新加载当前文件";
             this.重新加载当前文件ToolStripMenuItem.Click += new System.EventHandler(this.重新加载当前文件ToolStripMenuItem_Click);
             // 
@@ -229,13 +230,13 @@
             this.高级功能ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.事件树ToolStripMenuItem});
             this.高级功能ToolStripMenuItem.Name = "高级功能ToolStripMenuItem";
-            this.高级功能ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.高级功能ToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
             this.高级功能ToolStripMenuItem.Text = "高级功能";
             // 
             // 事件树ToolStripMenuItem
             // 
             this.事件树ToolStripMenuItem.Name = "事件树ToolStripMenuItem";
-            this.事件树ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.事件树ToolStripMenuItem.Size = new System.Drawing.Size(137, 26);
             this.事件树ToolStripMenuItem.Text = "事件树";
             this.事件树ToolStripMenuItem.Click += new System.EventHandler(this.事件树ToolStripMenuItem_Click);
             // 
@@ -243,14 +244,14 @@
             // 
             this.modToolStripMenuItem.ForeColor = System.Drawing.Color.LimeGreen;
             this.modToolStripMenuItem.Name = "modToolStripMenuItem";
-            this.modToolStripMenuItem.Size = new System.Drawing.Size(133, 21);
+            this.modToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
             this.modToolStripMenuItem.Text = "交流Q群 496198287";
             this.modToolStripMenuItem.Click += new System.EventHandler(this.modToolStripMenuItem_Click);
             // 
             // 测试ToolStripMenuItem
             // 
             this.测试ToolStripMenuItem.Name = "测试ToolStripMenuItem";
-            this.测试ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.测试ToolStripMenuItem.Size = new System.Drawing.Size(53, 26);
             this.测试ToolStripMenuItem.Text = "测试";
             this.测试ToolStripMenuItem.Click += new System.EventHandler(this.测试ToolStripMenuItem_Click);
             // 
@@ -259,9 +260,10 @@
             this.dockPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dockPanel1.DockBackColor = System.Drawing.SystemColors.Control;
             this.dockPanel1.DockLeftPortion = 300D;
-            this.dockPanel1.Location = new System.Drawing.Point(0, 25);
+            this.dockPanel1.Location = new System.Drawing.Point(0, 30);
+            this.dockPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.Size = new System.Drawing.Size(1335, 631);
+            this.dockPanel1.Size = new System.Drawing.Size(1780, 790);
             dockPanelGradient1.EndColor = System.Drawing.SystemColors.ControlLight;
             dockPanelGradient1.StartColor = System.Drawing.SystemColors.ControlLight;
             autoHideStripSkin1.DockStripGradient = dockPanelGradient1;
@@ -313,16 +315,17 @@
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1335, 656);
+            this.ClientSize = new System.Drawing.Size(1780, 820);
             this.Controls.Add(this.dockPanel1);
             this.Controls.Add(this.menuStrip1);
-            this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mod制作工具 v2.22";

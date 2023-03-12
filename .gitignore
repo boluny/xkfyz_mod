@@ -1,2 +1,7 @@
 .vs
 /xkfy_mod/obj
+/xkfy_mod/bin/Debug/*.exe
+/xkfy_mod/bin/Debug/*.exe.config
+/xkfy_mod/bin/Debug/*.pdb
+/xkfy_mod/bin/Debug/修改后的文件
+

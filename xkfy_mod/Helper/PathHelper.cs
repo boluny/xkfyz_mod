@@ -84,6 +84,10 @@ namespace xkfy_mod.Helper
         /// 工具配置文件/HuiHe.xml
         /// </summary>
         public static string HuiHePath => "工具配置文件/HuiHe.xml";
+        /// <summary>
+        /// 工具配置文件/EventData.xml
+        /// </summary>
+        public static string PATH_EVENT_DATA => "工具配置文件/EventData.xml";
 
         /// <summary>
         /// 工具配置文件/TalkManager/NpcImg.xml
