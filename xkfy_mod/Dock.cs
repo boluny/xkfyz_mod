@@ -169,23 +169,23 @@ namespace xkfy_mod
                 string tbName = currentNode.Tag.ToString();
                 JudgeFile(tbName, currentNode.Parent.Tag.ToString(), currentNode.Text);
                 //反射实例化窗体
-                DockContent dc = (DockContent)Assembly.Load("xkfy_mod").CreateInstance("xkfy_mod." + tbName);
+                DockContent handlerForm = (DockContent)Assembly.Load("xkfy_mod").CreateInstance("xkfy_mod." + tbName);
                 //如果对象为空，则代表使用的是公共窗口
-                if (dc == null)
+                if (handlerForm == null)
                 {
-                    Almighty a = new Almighty(tbName)
+                    Almighty defaultHandlerForm = new Almighty(tbName)
                     {
                         Text = currentNode.Text,
                         Tag = tbName
                     };
-                    a.Show(DockPanel, DockState.Document);
+                    defaultHandlerForm.Show(DockPanel, DockState.Document);
                 }
                 else
                 { 
                     //显示窗口
-                    dc.Text = currentNode.Text;
-                    dc.Tag = tbName;
-                    dc.Show(DockPanel, DockState.Document);
+                    handlerForm.Text = currentNode.Text;
+                    handlerForm.Tag = tbName;
+                    handlerForm.Show(DockPanel, DockState.Document);
                 }
             }
             catch (Exception ex)

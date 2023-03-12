@@ -31,5 +31,10 @@ namespace xkfy_mod
         {
             System.Diagnostics.Process.Start("https://weibo.com/6387835066/profile?topnav=1&wvr=6"); 
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

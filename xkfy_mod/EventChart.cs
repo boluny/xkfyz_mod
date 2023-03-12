@@ -38,7 +38,7 @@ namespace xkfy_mod
             eventData = XmlHelper.XmlDeserializeFromFile<List<EventData>>(path, Encoding.UTF8);
             if (eventData.Count <= 0)
             {
-                JieXi();
+                writeTofile();
                 eventData = XmlHelper.XmlDeserializeFromFile<List<EventData>>(path, Encoding.UTF8);
             }
             else
@@ -69,7 +69,7 @@ namespace xkfy_mod
             }
         }
 
-        private void JieXi()
+        private void writeTofile()
         {
             List<EventData> listEvent = new List<EventData>();
             foreach (DataRow dr in DataHelper.XkfyData.Tables["DevelopQuestData"].Rows)
@@ -104,7 +104,7 @@ namespace xkfy_mod
 
         private void btnDo_Click(object sender, EventArgs e)
         {
-            JieXi();
+            writeTofile();
         }
 
         private void CreateNode(String Id)
