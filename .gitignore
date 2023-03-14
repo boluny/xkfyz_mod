@@ -5,3 +5,16 @@ xkfy_mod/bin/Debug/*.exe.config
 xkfy_mod/bin/Debug/*.pdb
 
 xkfy_mod/bin/Debug/修改后的文件/
+/packages
+/xkfy_mod/bin/Debug/runtimes
+/xkfy_mod/bin/Debug/WebContent/PreviewStore
+/xkfy_mod/bin/Debug/xkfy_mod.exe.WebView2/EBWebView
+/xkfy_mod/bin/Release
+/xkfy_mod/bin/Debug/Newtonsoft.Json.xml
+/xkfy_mod/bin/Debug/Newtonsoft.Json.dll
+/xkfy_mod/bin/Debug/Microsoft.Web.WebView2.Wpf.xml
+/xkfy_mod/bin/Debug/Microsoft.Web.WebView2.Wpf.dll
+/xkfy_mod/bin/Debug/Microsoft.Web.WebView2.WinForms.xml
+/xkfy_mod/bin/Debug/Microsoft.Web.WebView2.WinForms.dll
+/xkfy_mod/bin/Debug/Microsoft.Web.WebView2.Core.xml
+/xkfy_mod/bin/Debug/Microsoft.Web.WebView2.Core.dll

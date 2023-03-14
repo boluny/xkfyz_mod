@@ -64,6 +64,7 @@
             this.重新加载当前文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.高级功能ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.事件树ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemPreviewStore = new System.Windows.Forms.ToolStripMenuItem();
             this.modToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.测试ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dockPanel1 = new WeifenLuo.WinFormsUI.Docking.DockPanel();
@@ -151,14 +152,14 @@
             // 
             this.tsmOpenModFolder.Image = global::xkfy_mod.Properties.Resources.打开1;
             this.tsmOpenModFolder.Name = "tsmOpenModFolder";
-            this.tsmOpenModFolder.Size = new System.Drawing.Size(224, 26);
+            this.tsmOpenModFolder.Size = new System.Drawing.Size(202, 26);
             this.tsmOpenModFolder.Text = "打开Mod文件夹";
             this.tsmOpenModFolder.Click += new System.EventHandler(this.tsmOpenModFolder_Click);
             // 
             // tsmImportMod
             // 
             this.tsmImportMod.Name = "tsmImportMod";
-            this.tsmImportMod.Size = new System.Drawing.Size(224, 26);
+            this.tsmImportMod.Size = new System.Drawing.Size(202, 26);
             this.tsmImportMod.Text = "导入别人的Mod";
             this.tsmImportMod.Click += new System.EventHandler(this.tsmImportMod_Click);
             // 
@@ -228,7 +229,8 @@
             // 高级功能ToolStripMenuItem
             // 
             this.高级功能ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.事件树ToolStripMenuItem});
+            this.事件树ToolStripMenuItem,
+            this.MenuItemPreviewStore});
             this.高级功能ToolStripMenuItem.Name = "高级功能ToolStripMenuItem";
             this.高级功能ToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
             this.高级功能ToolStripMenuItem.Text = "高级功能";
@@ -236,9 +238,16 @@
             // 事件树ToolStripMenuItem
             // 
             this.事件树ToolStripMenuItem.Name = "事件树ToolStripMenuItem";
-            this.事件树ToolStripMenuItem.Size = new System.Drawing.Size(137, 26);
+            this.事件树ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.事件树ToolStripMenuItem.Text = "事件树";
             this.事件树ToolStripMenuItem.Click += new System.EventHandler(this.事件树ToolStripMenuItem_Click);
+            // 
+            // MenuItemPreviewStore
+            // 
+            this.MenuItemPreviewStore.Name = "MenuItemPreviewStore";
+            this.MenuItemPreviewStore.Size = new System.Drawing.Size(224, 26);
+            this.MenuItemPreviewStore.Text = "商店预览";
+            this.MenuItemPreviewStore.Click += new System.EventHandler(this.MenuItemPreviewStore_Click);
             // 
             // modToolStripMenuItem
             // 
@@ -328,7 +337,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mod制作工具 v2.22";
+            this.Text = "Mod制作工具 v2.23";
             this.Load += new System.EventHandler(this.MainWnd_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMain_KeyDown);
             this.menuStrip1.ResumeLayout(false);
@@ -362,6 +371,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem 回合信息ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemPreviewStore;
     }
 }
 

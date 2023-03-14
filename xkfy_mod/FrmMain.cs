@@ -551,5 +551,10 @@ namespace xkfy_mod
             FrmRound fr = new FrmRound(null, null);
             fr.Show();
         }
+
+        private void MenuItemPreviewStore_Click(object sender, EventArgs e)
+        {
+            new FrmPreviewStore().Show();
+        }
     }
 }
