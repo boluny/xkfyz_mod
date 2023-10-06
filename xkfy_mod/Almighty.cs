@@ -370,7 +370,7 @@ namespace xkfy_mod
             //新增 1
             ShowForm("Add","复制新增");
         }
-        private void ShowForm(string type,string remark)
+        private void ShowForm(string type, string remark)
         { 
             DataGridViewRow dr = dg1.CurrentRow;
             if (!string.IsNullOrEmpty(_editForm) && _editForm != "0")

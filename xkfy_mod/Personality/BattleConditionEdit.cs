@@ -47,7 +47,7 @@ namespace xkfy_mod.Personality
         /// <summary>
         /// 绑定内功效果的DataTable的值到页面控件上
         /// </summary>
-        public void SetdgXiaoGuo()
+        private void SetdgXiaoGuo()
         {
             DataRow[] bnD = _battleConditionD.Select("ConditionID='" + txtConditionID.Text + "'");
             foreach (DataRow item in bnD)

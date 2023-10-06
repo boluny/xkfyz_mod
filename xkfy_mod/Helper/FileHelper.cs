@@ -180,15 +180,22 @@ namespace xkfy_mod.Helper
         /// <param name="dtType"></param>
         private static void BuildTableStruct(string tbName, IList<TableExplain> list, string dtType)
         {
-            DataTable dt = new DataTable {TableName = tbName};
+            DataTable dt = CreateTableBase(tbName, list, dtType);
+            DataHelper.XkfyData.Tables.Add(dt);
+        }
+
+        private static DataTable CreateTableBase(string tbName, IList<TableExplain> list, string dtType)
+        {
+            DataTable dt = new DataTable { TableName = tbName };
             foreach (TableExplain toolsColumn in list)
             {
                 string columnName = dtType == "4" ? toolsColumn.ToolColumn : toolsColumn.Column;
                 dt.Columns.Add(StringUtils.FormatToolColumn(columnName));
             }
-            dt.Columns.Add("rowState");
-            dt.Columns.Add("indexSn", typeof (int));
-            DataHelper.XkfyData.Tables.Add(dt);
+            //dt.Columns.Add("rowState");
+            //dt.Columns.Add("indexSn", typeof(int));
+            AddToolMetaColumns(dt);
+            return dt;
         }
 
         /// <summary>
@@ -197,13 +204,20 @@ namespace xkfy_mod.Helper
         /// <param name="tbName"></param>
         private static void BuildDetailTableStruct(string tbName)
         {
-            DataTable dt = new DataTable {TableName = tbName};
+            DataTable dt = CreateDetailTableBase(tbName);
+            DataHelper.XkfyData.Tables.Add(dt);
+        }
+
+        private static DataTable CreateDetailTableBase(string tbName)
+        {
+            DataTable dt = new DataTable { TableName = tbName };
             IList<TableExplain> list = GetColumnData(tbName);
             foreach (TableExplain toolsColumn in list)
             {
                 dt.Columns.Add(StringUtils.FormatToolColumn(toolsColumn.Column));
             }
-            DataHelper.XkfyData.Tables.Add(dt);
+
+            return dt;
         }
 
         #endregion
@@ -218,7 +232,7 @@ namespace xkfy_mod.Helper
         private static void ReadModFile(string tbName, string path)
         {
             DataTable dt = DataHelper.XkfyData.Tables[tbName];
-            bool fristRow = true;
+            bool firstRow = true;
             int rowIndex = 1;
             using (StreamReader sr = new StreamReader(path, Encoding.Default))
             {
@@ -228,9 +242,9 @@ namespace xkfy_mod.Helper
                     if (readStr != null)
                     {
                         string[] strs = readStr.Split('\t'); //将读取的字符串按"制表符/t“和””“分割成数组
-                        if (fristRow)
+                        if (firstRow)
                         {
-                            fristRow = false;
+                            firstRow = false;
                             continue;
                         }
                         DataRow dr = dt.NewRow();
@@ -396,11 +410,11 @@ namespace xkfy_mod.Helper
                 switch (myConfig.DtType)
                 {
                     case "1":
-                        BuildData(myConfig.MainDtName, myConfig.DetailDtName, myConfig.TxtName, filePath);
+                        SerializeToFile(myConfig.MainDtName, myConfig.DetailDtName, myConfig.TxtName, filePath);
                         break;
                     case "2":
                     case "3":
-                        BuildData(myConfig.MainDtName, myConfig.MainDtName, filePath);
+                        SerializeToFile(myConfig.MainDtName, myConfig.MainDtName, filePath);
                         break;
                 }
 //                if (myConfig.IsCache == "1")
@@ -426,7 +440,7 @@ namespace xkfy_mod.Helper
                 {
                     colConfigKey = DataHelper.NpcConfigFileName;
                 }
-                BuildData(tbName, colConfigKey, filePath);
+                SerializeToFile(tbName, colConfigKey, filePath);
             }
         }
 
@@ -439,22 +453,16 @@ namespace xkfy_mod.Helper
         /// <param name="detailDtName"></param>
         /// <param name="txtName"></param>
         /// <param name="filePath">保存路径</param>
-        public static void BuildData(string mainDtName, string detailDtName, string txtName, string filePath)
+        private static void SerializeToFile(string mainDtName, string detailDtName, string txtName, string filePath)
         {
             int maxRow = 0;
             StringBuilder sbTitle = new StringBuilder();
             StringBuilder sbConten = new StringBuilder();
             DataTable dtMain = DataHelper.XkfyData.Tables[mainDtName].Copy();
             DataTable dtDetail = DataHelper.XkfyData.Tables[detailDtName].Copy();
-            if (dtMain.Columns.Contains("rowState"))
-            {
-                dtMain.Columns.Remove("rowState");
-            }
 
-            if (dtMain.Columns.Contains("indexSn"))
-            {
-                dtMain.Columns.Remove("indexSn");
-            }
+            RemoveToolMetaColumns(dtMain);
+
             //循环主表的所有列
             foreach (DataRow dr in dtMain.Rows)
             {
@@ -509,13 +517,26 @@ namespace xkfy_mod.Helper
         /// <param name="tbName">表名称</param>
         /// <param name="colConfigKey">列配置Key</param>
         /// <param name="filePath">保存路径</param> 
-        private static void BuildData(string tbName, string colConfigKey, string filePath)
+        private static void SerializeToFile(string tbName, string colConfigKey, string filePath)
         {
             StringBuilder sbConten = new StringBuilder();
             DataTable dtMain = DataHelper.XkfyData.Tables[tbName].Copy();
 
             #region 特殊处理
 
+            RemoveToolMetaColumns(dtMain);
+
+            #endregion
+
+            sbConten.Append(GetTextTitle(colConfigKey));
+            sbConten.Append(GetTextConten(dtMain));
+
+            dtMain.Dispose();
+            FileUtils.WriteData(sbConten.ToString(), filePath);
+        }
+
+        private static void RemoveToolMetaColumns(DataTable dtMain)
+        {
             if (dtMain.Columns.Contains("rowState"))
             {
                 dtMain.Columns.Remove("rowState");
@@ -525,14 +546,19 @@ namespace xkfy_mod.Helper
             {
                 dtMain.Columns.Remove("indexSn");
             }
+        }
 
-            #endregion
+        private static void AddToolMetaColumns(DataTable dtMain)
+        {
+            if (!dtMain.Columns.Contains("rowState"))
+            {
+                dtMain.Columns.Add("rowState");
+            }
 
-            sbConten.Append(GetTextTitle(colConfigKey));
-            sbConten.Append(GetTextConten(dtMain));
-
-            dtMain.Dispose();
-            FileUtils.WriteData(sbConten.ToString(), filePath);
+            if (!dtMain.Columns.Contains("indexSn"))
+            {
+                dtMain.Columns.Add("indexSn", typeof(int));
+            }
         }
 
         #endregion

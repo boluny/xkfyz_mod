@@ -520,8 +520,7 @@ namespace xkfy_mod.Helper
                         continue;
                 }
 
-                string tempa = item["ValueLimit"].ToString();
-                tempa = tempa != "0" ? tempa + "个" : "所有";
+
                 switch (item["EffectType"].ToString())
                 {
                     case "0":
@@ -555,6 +554,9 @@ namespace xkfy_mod.Helper
                     case "9":
                         explain = "移动范围 +" + item["ValueLimit"].ToString() + "";
                         break;
+                    case "14":
+                        explain = $"【{tempExplain}】最低{value1}{percent} 最高{value2}{percent}";
+                        break;
                     case "15":
                     case "16":
                     case "17":
@@ -562,7 +564,22 @@ namespace xkfy_mod.Helper
                         explain = $"【{tempExplain}】{value1}{percent}  最多{item["ValueLimit"]}{percent}";
                         break;
                     case "20":
-                        explain = $"每回合解除【{tempa}】负面状态";
+                        if (accumulate == "0")
+                        {
+                            // random clear [value1, value2-1] debuff
+                            // As Random.range(int min, int max) only generate numbers in [min, max)
+                            int orig_max = Convert.ToInt32(value2) - 1;
+                            int orig_min = Convert.ToInt32(value1);
+                            string upper = Convert.ToString( orig_max > orig_min ? orig_max : orig_min);
+                            explain = $"每回合随机解除【{value1}】到【{upper}】个负面状态";
+                        }
+                        else if (accumulate == "4")
+                        {
+                            explain = "每回合解除所有负面状态";
+                        } else
+                        {
+                            explain = "未知清负方式，请联系作者";
+                        }
                         break;
                     case "22":
                         explain = $"行动等级 +{item["ValueLimit"].ToString()} 神行";

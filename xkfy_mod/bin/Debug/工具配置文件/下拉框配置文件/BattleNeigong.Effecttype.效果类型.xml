@@ -41,6 +41,10 @@
 		<Value>免疫内伤</Value>
 	</DicConfig>
 	<DicConfig>
+		<Key>14</Key>
+		<Value>左右互搏</Value>
+	</DicConfig>
+	<DicConfig>
 		<Key>15</Key>
 		<Value>反弹伤害</Value>
 	</DicConfig>

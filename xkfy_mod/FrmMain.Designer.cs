@@ -86,7 +86,7 @@
             this.测试ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1780, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1780, 28);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -94,7 +94,7 @@
             // 
             this.tsmCreate.Image = global::xkfy_mod.Properties.Resources.新建__1_;
             this.tsmCreate.Name = "tsmCreate";
-            this.tsmCreate.Size = new System.Drawing.Size(103, 26);
+            this.tsmCreate.Size = new System.Drawing.Size(103, 24);
             this.tsmCreate.Text = "重新开始";
             this.tsmCreate.Click += new System.EventHandler(this.tsmCreate_Click_1);
             // 
@@ -107,7 +107,7 @@
             this.tsmSetGameInstallPath});
             this.tsCreateMOD.Image = global::xkfy_mod.Properties.Resources.生成;
             this.tsCreateMOD.Name = "tsCreateMOD";
-            this.tsCreateMOD.Size = new System.Drawing.Size(73, 26);
+            this.tsCreateMOD.Size = new System.Drawing.Size(73, 24);
             this.tsCreateMOD.Text = "生成";
             this.tsCreateMOD.Click += new System.EventHandler(this.tsCreateMOD_Click);
             // 
@@ -145,7 +145,7 @@
             this.tsmImportMod});
             this.tsmMods.Image = global::xkfy_mod.Properties.Resources.打开工程;
             this.tsmMods.Name = "tsmMods";
-            this.tsmMods.Size = new System.Drawing.Size(78, 26);
+            this.tsmMods.Size = new System.Drawing.Size(78, 24);
             this.tsmMods.Text = "Mod";
             // 
             // tsmOpenModFolder
@@ -167,7 +167,7 @@
             // 
             this.tsmCreateCurr.Image = global::xkfy_mod.Properties.Resources.保存;
             this.tsmCreateCurr.Name = "tsmCreateCurr";
-            this.tsmCreateCurr.Size = new System.Drawing.Size(119, 26);
+            this.tsmCreateCurr.Size = new System.Drawing.Size(119, 24);
             this.tsmCreateCurr.Text = "保存Ctrl+S";
             this.tsmCreateCurr.Click += new System.EventHandler(this.tsmCreateCurr_Click);
             // 
@@ -181,7 +181,7 @@
             this.回合信息ToolStripMenuItem});
             this.tsmExplain.Image = global::xkfy_mod.Properties.Resources.set;
             this.tsmExplain.Name = "tsmExplain";
-            this.tsmExplain.Size = new System.Drawing.Size(73, 26);
+            this.tsmExplain.Size = new System.Drawing.Size(73, 24);
             this.tsmExplain.Text = "设置";
             // 
             // tsmWriteExplain
@@ -222,7 +222,7 @@
             // 
             this.重新加载当前文件ToolStripMenuItem.Image = global::xkfy_mod.Properties.Resources.重新加载;
             this.重新加载当前文件ToolStripMenuItem.Name = "重新加载当前文件ToolStripMenuItem";
-            this.重新加载当前文件ToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.重新加载当前文件ToolStripMenuItem.Size = new System.Drawing.Size(163, 24);
             this.重新加载当前文件ToolStripMenuItem.Text = "重新加载当前文件";
             this.重新加载当前文件ToolStripMenuItem.Click += new System.EventHandler(this.重新加载当前文件ToolStripMenuItem_Click);
             // 
@@ -232,7 +232,7 @@
             this.事件树ToolStripMenuItem,
             this.MenuItemPreviewStore});
             this.高级功能ToolStripMenuItem.Name = "高级功能ToolStripMenuItem";
-            this.高级功能ToolStripMenuItem.Size = new System.Drawing.Size(83, 26);
+            this.高级功能ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.高级功能ToolStripMenuItem.Text = "高级功能";
             // 
             // 事件树ToolStripMenuItem
@@ -253,14 +253,14 @@
             // 
             this.modToolStripMenuItem.ForeColor = System.Drawing.Color.LimeGreen;
             this.modToolStripMenuItem.Name = "modToolStripMenuItem";
-            this.modToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.modToolStripMenuItem.Size = new System.Drawing.Size(165, 24);
             this.modToolStripMenuItem.Text = "交流Q群 496198287";
             this.modToolStripMenuItem.Click += new System.EventHandler(this.modToolStripMenuItem_Click);
             // 
             // 测试ToolStripMenuItem
             // 
             this.测试ToolStripMenuItem.Name = "测试ToolStripMenuItem";
-            this.测试ToolStripMenuItem.Size = new System.Drawing.Size(53, 26);
+            this.测试ToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.测试ToolStripMenuItem.Text = "测试";
             this.测试ToolStripMenuItem.Click += new System.EventHandler(this.测试ToolStripMenuItem_Click);
             // 
@@ -269,10 +269,10 @@
             this.dockPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dockPanel1.DockBackColor = System.Drawing.SystemColors.Control;
             this.dockPanel1.DockLeftPortion = 300D;
-            this.dockPanel1.Location = new System.Drawing.Point(0, 30);
+            this.dockPanel1.Location = new System.Drawing.Point(0, 28);
             this.dockPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.Size = new System.Drawing.Size(1780, 790);
+            this.dockPanel1.Size = new System.Drawing.Size(1780, 792);
             dockPanelGradient1.EndColor = System.Drawing.SystemColors.ControlLight;
             dockPanelGradient1.StartColor = System.Drawing.SystemColors.ControlLight;
             autoHideStripSkin1.DockStripGradient = dockPanelGradient1;
@@ -337,7 +337,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mod制作工具 v2.23";
+            this.Text = "Mod制作工具 v2.25";
             this.Load += new System.EventHandler(this.MainWnd_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMain_KeyDown);
             this.menuStrip1.ResumeLayout(false);

@@ -17,6 +17,10 @@
 		<Value>友军</Value>
 	</DicConfig>
 	<DicConfig>
+		<Key>6</Key>
+		<Value>所有人</Value>
+	</DicConfig>
+	<DicConfig>
 		<Key>7</Key>
 		<Value>触发</Value>
 	</DicConfig>

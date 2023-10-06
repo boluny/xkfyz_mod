@@ -7,6 +7,7 @@
 		<IsSelColumn>1</IsSelColumn>
 		<Width>100</Width>
 		<Height>21</Height>
+		<IsDropDownList>0</IsDropDownList>
 	</TableExplain>
 	<TableExplain>
 		<Column>iClipID</Column>
@@ -15,6 +16,7 @@
 		<IsSelColumn>0</IsSelColumn>
 		<Width>100</Width>
 		<Height>21</Height>
+		<IsDropDownList>0</IsDropDownList>
 	</TableExplain>
 	<TableExplain>
 		<Column>bStart</Column>
@@ -23,75 +25,118 @@
 		<IsSelColumn>0</IsSelColumn>
 		<Width>100</Width>
 		<Height>21</Height>
+		<IsDropDownList>0</IsDropDownList>
 	</TableExplain>
 	<TableExplain>
 		<Column>iNextClipID</Column>
 		<Text>下次执行</Text>
 		<Explain>执行顺序ID</Explain>
+		<IsSelColumn>0</IsSelColumn>
 		<Width>100</Width>
 		<Height>21</Height>
+		<IsDropDownList>0</IsDropDownList>
 	</TableExplain>
 	<TableExplain>
 		<Column>iLinkID</Column>
 		<Text />
 		<Explain />
+		<IsSelColumn>0</IsSelColumn>
 		<Width>100</Width>
 		<Height>21</Height>
+		<IsDropDownList>0</IsDropDownList>
 	</TableExplain>
 	<TableExplain>
 		<Column>TriggerType</Column>
 		<Text />
-		<Explain>=6 加入战斗人员 =5角色死亡触发 =1 角色行动后触发</Explain>
+		<Explain>=6 回合开始时触发 =5角色死亡触发 =1 角色行动后触发</Explain>
 		<IsSelColumn>1</IsSelColumn>
 		<Width>100</Width>
 		<Height>21</Height>
+		<IsDropDownList>0</IsDropDownList>
 	</TableExplain>
 	<TableExplain>
 		<Column>TriggerData</Column>
 		<Explain>TriggerType=6 代表加入的回合 TriggerType=5哪个角色死亡 TriggerType=1哪个角色行动后</Explain>
+		<IsSelColumn>0</IsSelColumn>
 		<Width>100</Width>
 		<Height>21</Height>
+		<IsDropDownList>0</IsDropDownList>
 	</TableExplain>
 	<TableExplain>
 		<Column>RequireType</Column>
 		<Text />
-		<Explain />
+		<Explain>public enum _RequireType
+{
+	// Token: 0x040003C5 RID: 965
+	None,
+	// Token: 0x040003C6 RID: 966
+	HitPoint,
+	// Token: 0x040003C7 RID: 967
+	Intimacy,
+	// Token: 0x040003C8 RID: 968
+	Aggro,
+	// Token: 0x040003C9 RID: 969
+	FactionCount,
+	// Token: 0x040003CA RID: 970
+	AttackTo,
+	// Token: 0x040003CB RID: 971
+	HurtForm,
+	// Token: 0x040003CC RID: 972
+	Quest,
+	// Token: 0x040003CD RID: 973
+	Collection,
+	// Token: 0x040003CE RID: 974
+	DevelopQuest
+}</Explain>
+		<IsSelColumn>0</IsSelColumn>
 		<Width>100</Width>
 		<Height>21</Height>
+		<IsDropDownList>0</IsDropDownList>
 	</TableExplain>
 	<TableExplain>
 		<Column>RequireEqual</Column>
 		<Text />
-		<Explain />
+		<Explain>=0 相等， =1 大于， =2 小于，=3，大于等于，=4 小于等于，=5 不等于</Explain>
+		<IsSelColumn>0</IsSelColumn>
 		<Width>100</Width>
 		<Height>21</Height>
+		<IsDropDownList>0</IsDropDownList>
 	</TableExplain>
 	<TableExplain>
 		<Column>iRequireValue1</Column>
 		<Text />
 		<Explain />
+		<IsSelColumn>0</IsSelColumn>
 		<Width>100</Width>
 		<Height>21</Height>
+		<IsDropDownList>0</IsDropDownList>
 	</TableExplain>
 	<TableExplain>
 		<Column>iRequireValue2</Column>
 		<Text />
 		<Explain />
+		<IsSelColumn>0</IsSelColumn>
 		<Width>100</Width>
 		<Height>21</Height>
+		<IsDropDownList>0</IsDropDownList>
 	</TableExplain>
 	<TableExplain>
 		<Column>iTriggerPercent</Column>
 		<Text />
 		<Explain />
+		<IsSelColumn>0</IsSelColumn>
 		<Width>100</Width>
 		<Height>21</Height>
+		<IsDropDownList>0</IsDropDownList>
 	</TableExplain>
 	<TableExplain>
 		<Column>TriggerEvent</Column>
-		<Explain>=4 附加状态</Explain>
+		<Text />
+		<Explain>=0 显示信息 =1 增加队友 =2 改变阵营 =7 离开战斗 =10 改变AI =11 奖励 =4 附加状态</Explain>
+		<IsSelColumn>0</IsSelColumn>
 		<Width>100</Width>
 		<Height>21</Height>
+		<IsDropDownList>0</IsDropDownList>
 	</TableExplain>
 	<TableExplain>
 		<Column>iTriggerEventArg1</Column>
@@ -99,31 +144,40 @@
 		<IsSelColumn>1</IsSelColumn>
 		<Width>100</Width>
 		<Height>21</Height>
+		<IsDropDownList>0</IsDropDownList>
 	</TableExplain>
 	<TableExplain>
 		<Column>iTriggerEventArg2</Column>
 		<Explain>0队友，1敌对，2中立</Explain>
+		<IsSelColumn>0</IsSelColumn>
 		<Width>100</Width>
 		<Height>21</Height>
+		<IsDropDownList>0</IsDropDownList>
 	</TableExplain>
 	<TableExplain>
 		<Column>iTriggerEventArg3</Column>
 		<Explain>出场位置</Explain>
+		<IsSelColumn>0</IsSelColumn>
 		<Width>100</Width>
 		<Height>21</Height>
+		<IsDropDownList>0</IsDropDownList>
 	</TableExplain>
 	<TableExplain>
 		<Column>iGroup</Column>
 		<Text />
 		<Explain />
+		<IsSelColumn>0</IsSelColumn>
 		<Width>100</Width>
 		<Height>21</Height>
+		<IsDropDownList>0</IsDropDownList>
 	</TableExplain>
 	<TableExplain>
 		<Column>irepeat</Column>
 		<Text />
 		<Explain />
+		<IsSelColumn>0</IsSelColumn>
 		<Width>100</Width>
 		<Height>21</Height>
+		<IsDropDownList>0</IsDropDownList>
 	</TableExplain>
 </ArrayOfTableExplain>

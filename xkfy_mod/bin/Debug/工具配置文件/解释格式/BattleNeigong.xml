@@ -154,12 +154,20 @@
 		<Id>BattleNeigong20</Id>
 		<ParentId>BattleNeigong9</ParentId>
 		<Column>EffectType</Column>
+		<Code>14</Code>
+		<Text>左右互搏</Text>
+		<Remark> </Remark>
+	</Annotation>
+	<Annotation>
+		<Id>BattleNeigong21</Id>
+		<ParentId>BattleNeigong9</ParentId>
+		<Column>EffectType</Column>
 		<Code>15</Code>
 		<Text>反弹伤害</Text>
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong21</Id>
+		<Id>BattleNeigong22</Id>
 		<ParentId>BattleNeigong9</ParentId>
 		<Column>EffectType</Column>
 		<Code>16</Code>
@@ -167,7 +175,7 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong22</Id>
+		<Id>BattleNeigong23</Id>
 		<ParentId>BattleNeigong9</ParentId>
 		<Column>EffectType</Column>
 		<Code>17</Code>
@@ -175,7 +183,7 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong23</Id>
+		<Id>BattleNeigong24</Id>
 		<ParentId>BattleNeigong9</ParentId>
 		<Column>EffectType</Column>
 		<Code>18</Code>
@@ -183,7 +191,7 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong24</Id>
+		<Id>BattleNeigong25</Id>
 		<ParentId>BattleNeigong9</ParentId>
 		<Column>EffectType</Column>
 		<Code>19</Code>
@@ -191,7 +199,7 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong25</Id>
+		<Id>BattleNeigong26</Id>
 		<ParentId>BattleNeigong9</ParentId>
 		<Column>EffectType</Column>
 		<Code>20</Code>
@@ -199,7 +207,7 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong26</Id>
+		<Id>BattleNeigong27</Id>
 		<ParentId>BattleNeigong9</ParentId>
 		<Column>EffectType</Column>
 		<Code>22</Code>
@@ -207,7 +215,7 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong27</Id>
+		<Id>BattleNeigong28</Id>
 		<ParentId>BattleNeigong9</ParentId>
 		<Column>EffectType</Column>
 		<Code>23</Code>
@@ -215,7 +223,7 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong28</Id>
+		<Id>BattleNeigong29</Id>
 		<ParentId>BattleNeigong9</ParentId>
 		<Column>EffectType</Column>
 		<Code>24</Code>
@@ -223,7 +231,7 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong29</Id>
+		<Id>BattleNeigong30</Id>
 		<ParentId>BattleNeigong9</ParentId>
 		<Column>EffectType</Column>
 		<Code>25</Code>
@@ -231,7 +239,7 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong30</Id>
+		<Id>BattleNeigong31</Id>
 		<ParentId>BattleNeigong9</ParentId>
 		<Column>EffectType</Column>
 		<Code>26</Code>
@@ -239,7 +247,7 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong31</Id>
+		<Id>BattleNeigong32</Id>
 		<ParentId>BattleNeigong9</ParentId>
 		<Column>EffectType</Column>
 		<Code>29</Code>
@@ -247,7 +255,7 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong32</Id>
+		<Id>BattleNeigong33</Id>
 		<ParentId>BattleNeigong9</ParentId>
 		<Column>EffectType</Column>
 		<Code>30</Code>
@@ -255,7 +263,7 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong33</Id>
+		<Id>BattleNeigong34</Id>
 		<ParentId>BattleNeigong9</ParentId>
 		<Column>EffectType</Column>
 		<Code>31</Code>
@@ -263,7 +271,7 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong34</Id>
+		<Id>BattleNeigong35</Id>
 		<ParentId>BattleNeigong9</ParentId>
 		<Column>EffectType</Column>
 		<Code>32</Code>
@@ -271,7 +279,7 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong35</Id>
+		<Id>BattleNeigong36</Id>
 		<ParentId>BattleNeigong9</ParentId>
 		<Column>EffectType</Column>
 		<Code>33</Code>
@@ -279,7 +287,7 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong36</Id>
+		<Id>BattleNeigong37</Id>
 		<ParentId>Base</ParentId>
 		<Column>Accumulate</Column>
 		<Code>Accumulate</Code>
@@ -287,63 +295,63 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong37</Id>
-		<ParentId>BattleNeigong36</ParentId>
+		<Id>BattleNeigong38</Id>
+		<ParentId>BattleNeigong37</ParentId>
 		<Column>Accumulate</Column>
 		<Code>0</Code>
 		<Text>数值型自身</Text>
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong38</Id>
-		<ParentId>BattleNeigong36</ParentId>
+		<Id>BattleNeigong39</Id>
+		<ParentId>BattleNeigong37</ParentId>
 		<Column>Accumulate</Column>
 		<Code>1</Code>
 		<Text>累积型自身</Text>
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong39</Id>
-		<ParentId>BattleNeigong36</ParentId>
+		<Id>BattleNeigong40</Id>
+		<ParentId>BattleNeigong37</ParentId>
 		<Column>Accumulate</Column>
 		<Code>4</Code>
 		<Text>效果型自身</Text>
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong40</Id>
-		<ParentId>BattleNeigong36</ParentId>
+		<Id>BattleNeigong41</Id>
+		<ParentId>BattleNeigong37</ParentId>
 		<Column>Accumulate</Column>
 		<Code>5</Code>
 		<Text>友军</Text>
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong41</Id>
-		<ParentId>BattleNeigong36</ParentId>
+		<Id>BattleNeigong42</Id>
+		<ParentId>BattleNeigong37</ParentId>
 		<Column>Accumulate</Column>
 		<Code>7</Code>
 		<Text>触发</Text>
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong42</Id>
-		<ParentId>BattleNeigong36</ParentId>
+		<Id>BattleNeigong43</Id>
+		<ParentId>BattleNeigong37</ParentId>
 		<Column>Accumulate</Column>
 		<Code>9</Code>
 		<Text>敌军</Text>
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong43</Id>
-		<ParentId>BattleNeigong36</ParentId>
+		<Id>BattleNeigong44</Id>
+		<ParentId>BattleNeigong37</ParentId>
 		<Column>Accumulate</Column>
 		<Code>10</Code>
 		<Text>低于或高于触发</Text>
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong44</Id>
+		<Id>BattleNeigong45</Id>
 		<ParentId>Base</ParentId>
 		<Column>Percent</Column>
 		<Code>Percent</Code>
@@ -351,7 +359,7 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong45</Id>
+		<Id>BattleNeigong46</Id>
 		<ParentId>Base</ParentId>
 		<Column>Value1</Column>
 		<Code>Value1</Code>
@@ -359,7 +367,7 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong46</Id>
+		<Id>BattleNeigong47</Id>
 		<ParentId>Base</ParentId>
 		<Column>Value2</Column>
 		<Code>Value2</Code>
@@ -367,7 +375,7 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong47</Id>
+		<Id>BattleNeigong48</Id>
 		<ParentId>Base</ParentId>
 		<Column>ValueLimit</Column>
 		<Code>ValueLimit</Code>
