@@ -330,12 +330,20 @@
 		<Id>BattleNeigong42</Id>
 		<ParentId>BattleNeigong37</ParentId>
 		<Column>Accumulate</Column>
+		<Code>6</Code>
+		<Text>所有人</Text>
+		<Remark> </Remark>
+	</Annotation>
+	<Annotation>
+		<Id>BattleNeigong43</Id>
+		<ParentId>BattleNeigong37</ParentId>
+		<Column>Accumulate</Column>
 		<Code>7</Code>
 		<Text>触发</Text>
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong43</Id>
+		<Id>BattleNeigong44</Id>
 		<ParentId>BattleNeigong37</ParentId>
 		<Column>Accumulate</Column>
 		<Code>9</Code>
@@ -343,7 +351,7 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong44</Id>
+		<Id>BattleNeigong45</Id>
 		<ParentId>BattleNeigong37</ParentId>
 		<Column>Accumulate</Column>
 		<Code>10</Code>
@@ -351,7 +359,7 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong45</Id>
+		<Id>BattleNeigong46</Id>
 		<ParentId>Base</ParentId>
 		<Column>Percent</Column>
 		<Code>Percent</Code>
@@ -359,7 +367,7 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong46</Id>
+		<Id>BattleNeigong47</Id>
 		<ParentId>Base</ParentId>
 		<Column>Value1</Column>
 		<Code>Value1</Code>
@@ -367,7 +375,7 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong47</Id>
+		<Id>BattleNeigong48</Id>
 		<ParentId>Base</ParentId>
 		<Column>Value2</Column>
 		<Code>Value2</Code>
@@ -375,7 +383,7 @@
 		<Remark> </Remark>
 	</Annotation>
 	<Annotation>
-		<Id>BattleNeigong48</Id>
+		<Id>BattleNeigong49</Id>
 		<ParentId>Base</ParentId>
 		<Column>ValueLimit</Column>
 		<Code>ValueLimit</Code>

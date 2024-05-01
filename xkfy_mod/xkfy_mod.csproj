@@ -96,7 +96,14 @@
     <Compile Include="Domain\StoreItem.cs" />
     <Compile Include="Entity\BasicList.cs" />
     <Compile Include="Entity\LinkageDdl.cs" />
+    <Compile Include="Entity\MatchItem.cs" />
     <Compile Include="Facade\StoreItemFacade.cs" />
+    <Compile Include="FrmGlobalSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGlobalSearch.Designer.cs">
+      <DependentUpon>FrmGlobalSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPreviewStore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -304,6 +311,9 @@
     <Compile Include="XML\XmlHelper.cs" />
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGlobalSearch.resx">
+      <DependentUpon>FrmGlobalSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPreviewStore.resx">
       <DependentUpon>FrmPreviewStore.cs</DependentUpon>

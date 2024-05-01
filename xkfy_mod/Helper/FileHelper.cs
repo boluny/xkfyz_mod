@@ -115,6 +115,14 @@ namespace xkfy_mod.Helper
 
         #region 读取Mod文件数据
 
+        public static void LoadAllTables()
+        {
+            foreach(string tableName in DataHelper.FormConfig.Keys)
+            {
+                LoadTable(tableName);
+            }
+        }
+
         /// <summary>
         /// 加载表数据信息
         /// </summary>

@@ -65,6 +65,7 @@
             this.高级功能ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.事件树ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemPreviewStore = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemGlobalSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.modToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.测试ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dockPanel1 = new WeifenLuo.WinFormsUI.Docking.DockPanel();
@@ -230,7 +231,8 @@
             // 
             this.高级功能ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.事件树ToolStripMenuItem,
-            this.MenuItemPreviewStore});
+            this.MenuItemPreviewStore,
+            this.MenuItemGlobalSearch});
             this.高级功能ToolStripMenuItem.Name = "高级功能ToolStripMenuItem";
             this.高级功能ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.高级功能ToolStripMenuItem.Text = "高级功能";
@@ -238,16 +240,23 @@
             // 事件树ToolStripMenuItem
             // 
             this.事件树ToolStripMenuItem.Name = "事件树ToolStripMenuItem";
-            this.事件树ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.事件树ToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
             this.事件树ToolStripMenuItem.Text = "事件树";
             this.事件树ToolStripMenuItem.Click += new System.EventHandler(this.事件树ToolStripMenuItem_Click);
             // 
             // MenuItemPreviewStore
             // 
             this.MenuItemPreviewStore.Name = "MenuItemPreviewStore";
-            this.MenuItemPreviewStore.Size = new System.Drawing.Size(224, 26);
+            this.MenuItemPreviewStore.Size = new System.Drawing.Size(227, 26);
             this.MenuItemPreviewStore.Text = "商店预览";
             this.MenuItemPreviewStore.Click += new System.EventHandler(this.MenuItemPreviewStore_Click);
+            // 
+            // MenuItemGlobalSearch
+            // 
+            this.MenuItemGlobalSearch.Name = "MenuItemGlobalSearch";
+            this.MenuItemGlobalSearch.Size = new System.Drawing.Size(227, 26);
+            this.MenuItemGlobalSearch.Text = "全局搜索（试验性）";
+            this.MenuItemGlobalSearch.Click += new System.EventHandler(this.MenuItemGlobalSearch_Click);
             // 
             // modToolStripMenuItem
             // 
@@ -337,7 +346,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mod制作工具 v2.25";
+            this.Text = "Mod制作工具 v2.26";
             this.Load += new System.EventHandler(this.MainWnd_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMain_KeyDown);
             this.menuStrip1.ResumeLayout(false);
@@ -372,6 +381,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem 回合信息ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MenuItemPreviewStore;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemGlobalSearch;
     }
 }
 

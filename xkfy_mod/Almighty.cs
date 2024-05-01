@@ -589,6 +589,10 @@ namespace xkfy_mod
                     }
                     txtExplain.Text = sbExplain.ToString();
                     break;
+                case "BattleCondition":
+                    string conditionId = dv.Cells[Const.CONDITION_IDENTIFIER_COLUMN_NAME].Value.ToString();
+                    txtExplain.Text = tl.ExplainBattleCondition(conditionId);
+                    break;
             }
         }
 

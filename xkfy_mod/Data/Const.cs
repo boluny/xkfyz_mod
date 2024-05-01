@@ -127,6 +127,7 @@ namespace xkfy_mod.Data
         /// NpcData.txt
         /// </summary>
         public static readonly string[] NpcDataRow = { "iID", "sNpcName", "sIntroduction" };
+        internal static readonly string VERSION = "2.27";
 
         #region 查询专用
         /// <summary>
@@ -135,7 +136,12 @@ namespace xkfy_mod.Data
         public static GetValueRows NeiGongFe = new GetValueRows(BattleNeigong, "Name", "Id");
 
         public static GetValueRows BattleAbilityFe = new GetValueRows(BattleAbility, "SkillName", "SkillNo");
-        
+
+        #endregion
+
+        #region Column name identifer to search in data tables
+        public const string CONDITION_IDENTIFIER_COLUMN_NAME = "ConditionID";
+
         #endregion
     }
 }

@@ -4,7 +4,6 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Windows.Documents;
 using System.Windows.Forms;
 using xkfy_mod.Data;
 using xkfy_mod.Entity;
@@ -15,6 +14,8 @@ namespace xkfy_mod.Helper
 {
     public class ToolsHelper
     {
+        private readonly HashSet<string> directOutputAccumulationTypes = new HashSet<string>() { "5", "7", "9", "10" };
+        private readonly HashSet<string> debuffConditionTypes = new HashSet<string>() { "1", "3", "5" };
         #region 解释物品奖励
 
         /// <summary>
@@ -451,6 +452,148 @@ namespace xkfy_mod.Helper
 
         #endregion
 
+        private void ExplainEffectTypes(StringBuilder sbExplain, bool isPositive, string accumulate, string effectType, string value1, string value2, string valueLimit, string percent)
+        {
+            string explain = string.Empty;
+            string tempExplain = string.Empty;
+            string strAccumulate = string.Empty;
+
+            //var lists = FileUtils.ReadConfig<Annotation>(PathHelper.GetExplicatePath("BattleNeigong"));
+
+            //var result = lists.Where(l => l.Column == "Accumulate" && l.Code == accumulate).ToList();
+
+
+            //通过key从Dictionary读取出对应的Value
+            tempExplain = DataHelper.DropDownListDict[Const.BaNeEffecttype].ContainsKey(effectType)
+                ? DataHelper.DropDownListDict[Const.BaNeEffecttype][effectType]
+                : "";
+
+            //如果前四项为0，代表没有效果
+            if (effectType == "" || (effectType == "0" && accumulate == "0" && value1 == "0" && value2 == "0"))
+            {
+                return;
+            }
+            string speedVerb = isPositive ? "+" : "-";
+            string verb = isPositive ? "提高" : "减少";
+            string regainVerb = isPositive ? "恢复" : "损失";
+
+            string conditionId;
+            switch (accumulate)
+            {
+                case "0":
+                    strAccumulate = isPositive? "固定增加" : "固定减少";
+                    break;
+                case "1":
+                    strAccumulate = isPositive? "累进增加" : "累进减少";
+                    break;
+                case "4":
+                    strAccumulate = "";
+                    break;
+                case "5":
+                    strAccumulate = $"{verb}周遭{valueLimit}格友军【{tempExplain}】{value1}{percent}";
+                    break;
+                case "7":
+                    conditionId = (value1 == "0" || string.IsNullOrEmpty(value1)) ? value2 : value1;
+                    strAccumulate = string.Format("发动【{0}】后，触发【{1}】", tempExplain, getCondition(conditionId));
+                    break;
+                case "9":
+                    strAccumulate = string.Format("降低周遭{0}格敌军【{1}】{2}{3}", valueLimit,
+                        tempExplain, value1, percent);
+                    break;
+                case "10":
+                    conditionId = (value1 == "0" || string.IsNullOrEmpty(value1)) ? value2 : value1;
+                    string str_gd = (value1 == "0" || string.IsNullOrEmpty(value1)) ? "高于" : "低于";
+                    strAccumulate = string.Format("【{0}】{4}{1}{2}触发【{3}】", tempExplain,
+                        valueLimit, percent, getCondition(conditionId), str_gd);
+                    break;
+            }
+
+            if (directOutputAccumulationTypes.Contains(accumulate))
+            {
+                explain = strAccumulate;
+                goto writeExplain;
+            }
+
+            switch (effectType)
+            {
+                case "0":
+                case "1":
+                    strAccumulate = $"每回合{regainVerb}";
+                    explain = $"{strAccumulate}{value1}{percent}至{value2}{percent}【{tempExplain}】 最多{valueLimit}{percent}";
+                    break;
+                case "3":
+                case "4":
+                case "5":
+                case "6":
+                case "7":
+                case "8":
+                    explain = $"{strAccumulate}{value1}{percent}至{value2}{percent}【{tempExplain}】 最多{valueLimit}{percent}";
+                    break;
+                case "10":
+                case "24":
+                case "25":
+                case "29":
+                case "30":
+                case "33":
+                    explain = $"【{tempExplain}】";
+                    break;
+                case "9":
+                    explain = $"移动范围 {speedVerb}{valueLimit}";
+                    break;
+                case "14":
+                    explain = $"【{tempExplain}】最低{value1}{percent} 最高{value2}{percent}";
+                    break;
+                case "15":
+                case "16":
+                case "17":
+                case "18":
+                    explain = $"【{tempExplain}】{value1}{percent}至{value2}{percent}  最多{valueLimit}{percent}";
+                    break;
+                case "20":
+                    if (accumulate == "0")
+                    {
+                        // random clear [value1, value2-1] debuff
+                        // As Random.range(int min, int max) only generate numbers in [min, max)
+                        int orig_max = Convert.ToInt32(value2) - 1;
+                        int orig_min = Convert.ToInt32(value1);
+                        string upper = Convert.ToString(orig_max > orig_min ? orig_max : orig_min);
+                        explain = $"每回合随机解除【{value1}】到【{upper}】个负面状态";
+                    }
+                    else if (accumulate == "4")
+                    {
+                        explain = "每回合解除所有负面状态";
+                    }
+                    else
+                    {
+                        explain = "未知清负方式，请联系作者";
+                    }
+                    break;
+                case "22":
+                    explain = $"行动等级 {speedVerb}{valueLimit} 神行";
+                    break;
+                case "23":
+                    explain = "连斩：击杀敌人後可再行动";
+                    break;
+                case "26":
+                    strAccumulate = $"保护周遭{valueLimit}格同伴";
+                    sbExplain.Append(strAccumulate);
+                    break;
+                case "31":
+                    explain = "毒体：百毒不侵";
+                    break;
+                case "32":
+                    sbExplain.AppendFormat("减少{0}{1} - {2}{3}伤害", value1, percent, value2, percent);
+                    break;
+                default:
+                    sbExplain.AppendFormat("弱鸡作者不明白EffectType={0} 是什么意思！", effectType);
+                    break;
+
+            }
+
+writeExplain:
+            sbExplain.Append(explain);
+            sbExplain.AppendLine();
+        }
         #region 解释内功代码
 
         public string ExplainNeiGong(string id)
@@ -460,150 +603,148 @@ namespace xkfy_mod.Helper
 
             foreach (DataRow item in row)
             {
-                string explain = "";
-                string tempExplain = string.Empty;
-                string strAccumulate = string.Empty;
-
                 string accumulate = item["Accumulate"].ToString();
                 string effectType = item["EffectType"].ToString();
                 string value1 = item["value1"].ToString();
                 string value2 = item["value2"].ToString();
+                string valueLimit = item["ValueLimit"].ToString();
                 string percent = item["percent"].ToString() == "1" ? "%":"点";
+                ExplainEffectTypes(sbExplain, true, accumulate, effectType, value1, value2, valueLimit, percent);
 
-                var lists = FileUtils.ReadConfig<Annotation>(PathHelper.GetExplicatePath("BattleNeigong"));
+                //var lists = FileUtils.ReadConfig<Annotation>(PathHelper.GetExplicatePath("BattleNeigong"));
 
-                var result = lists.Where(l => l.Column == "Accumulate" && l.Code == accumulate).ToList();
-
-
-                //通过key从Dictionary读取出对应的Value
-                tempExplain = DataHelper.DropDownListDict[Const.BaNeEffecttype].ContainsKey(effectType)
-                    ? DataHelper.DropDownListDict[Const.BaNeEffecttype][effectType]
-                    : "";
-
-                //如果前四项为0，代表没有效果
-                if (effectType == "" || (effectType == "0" && accumulate == "0" && value1 == "0" && value2 == "0"))
-                {
-                    continue;
-                } 
-
-                string conditionId = "";
-                switch (accumulate)
-                {
-                    case "0":
-                        strAccumulate = "固定增加";
-                        break;
-                    case "1":
-                        strAccumulate = "累进增加";
-                        break;
-                    case "4":
-                        strAccumulate = "";
-                        break;
-                    case "5":
-                        strAccumulate = $"提高周遭{item["ValueLimit"]}格友军【{tempExplain}】{value1}{percent}";
-                        break;
-                    case "7":
-                        conditionId = (value1 == "0" || string.IsNullOrEmpty(value1)) ? value2 : value1;
-                        strAccumulate = string.Format("发动【{0}】后，触发【{1}】", tempExplain, getCondition(conditionId));
-                        sbExplain.AppendFormat("{0}\r\n", strAccumulate);
-                        continue;
-                    case "9":
-                        strAccumulate = string.Format("降低周遭{0}格敌军【{1}】{2}{3}", item["ValueLimit"].ToString(),
-                            tempExplain, value1, percent);
-                        sbExplain.AppendFormat("{0}\r\n", strAccumulate);
-                        continue;
-                    case "10":
-                        conditionId = (value1 == "0" || string.IsNullOrEmpty(value1)) ? value2 : value1;
-                        string str_gd = (value1 == "0" || string.IsNullOrEmpty(value1)) ? "高于" : "低于";
-                        strAccumulate = string.Format("【{0}】{4}{1}{2}触发【{3}】", tempExplain,
-                            item["ValueLimit"].ToString(), percent, getCondition(conditionId), str_gd);
-                        sbExplain.AppendFormat("{0}\r\n", strAccumulate);
-                        continue;
-                }
+                //var result = lists.Where(l => l.Column == "Accumulate" && l.Code == accumulate).ToList();
 
 
-                switch (item["EffectType"].ToString())
-                {
-                    case "0":
-                    case "1":
-                        strAccumulate = "每回合恢复";
-                        explain = strAccumulate + item["value1"].ToString() + percent + "【" + tempExplain + "】  最多" +
-                                  item["ValueLimit"].ToString() + percent;
-                        break;
-                    case "3":
-                    case "4":
-                    case "5":
-                    case "6":
-                    case "7":
-                    case "8":
-                        if (accumulate == "5")
-                        {
-                            explain = strAccumulate;
-                            break;
-                        }
-                        explain = strAccumulate + item["value1"] + percent + "【" + tempExplain + "】  最多" +
-                                  item["ValueLimit"].ToString() + percent;
-                        break;
-                    case "10":
-                    case "24":
-                    case "25":
-                    case "29":
-                    case "30":
-                    case "33":
-                        explain = $"【{tempExplain}】";
-                        break;
-                    case "9":
-                        explain = "移动范围 +" + item["ValueLimit"].ToString() + "";
-                        break;
-                    case "14":
-                        explain = $"【{tempExplain}】最低{value1}{percent} 最高{value2}{percent}";
-                        break;
-                    case "15":
-                    case "16":
-                    case "17":
-                    case "18":
-                        explain = $"【{tempExplain}】{value1}{percent}  最多{item["ValueLimit"]}{percent}";
-                        break;
-                    case "20":
-                        if (accumulate == "0")
-                        {
-                            // random clear [value1, value2-1] debuff
-                            // As Random.range(int min, int max) only generate numbers in [min, max)
-                            int orig_max = Convert.ToInt32(value2) - 1;
-                            int orig_min = Convert.ToInt32(value1);
-                            string upper = Convert.ToString( orig_max > orig_min ? orig_max : orig_min);
-                            explain = $"每回合随机解除【{value1}】到【{upper}】个负面状态";
-                        }
-                        else if (accumulate == "4")
-                        {
-                            explain = "每回合解除所有负面状态";
-                        } else
-                        {
-                            explain = "未知清负方式，请联系作者";
-                        }
-                        break;
-                    case "22":
-                        explain = $"行动等级 +{item["ValueLimit"].ToString()} 神行";
-                        break;
-                    case "23":
-                        explain = "连斩：击杀敌人後可再行动";
-                        break;
-                    case "26":
-                        strAccumulate = $"保护周遭{item["ValueLimit"].ToString()}格同伴";
-                        sbExplain.Append(strAccumulate);
-                        break;
-                    case "31":
-                        explain = "毒体：百毒不侵";
-                        break;
-                    case "32":
-                        sbExplain.AppendFormat("减少{0}{1} - {2}{3}伤害", value1, percent, value2, percent);
-                        break;
-                    default:
-                        sbExplain.AppendFormat("弱鸡作者不明白EffectType={0} 是什么意思！", item["EffectType"].ToString());
-                        break;
+                ////通过key从Dictionary读取出对应的Value
+                //tempExplain = DataHelper.DropDownListDict[Const.BaNeEffecttype].ContainsKey(effectType)
+                //    ? DataHelper.DropDownListDict[Const.BaNeEffecttype][effectType]
+                //    : "";
 
-                }
-                sbExplain.Append(explain);
-                sbExplain.Append("\r\n");
+                ////如果前四项为0，代表没有效果
+                //if (effectType == "" || (effectType == "0" && accumulate == "0" && value1 == "0" && value2 == "0"))
+                //{
+                //    continue;
+                //} 
+
+                //string conditionId = "";
+                //switch (accumulate)
+                //{
+                //    case "0":
+                //        strAccumulate = "固定增加";
+                //        break;
+                //    case "1":
+                //        strAccumulate = "累进增加";
+                //        break;
+                //    case "4":
+                //        strAccumulate = "";
+                //        break;
+                //    case "5":
+                //        strAccumulate = $"提高周遭{item["ValueLimit"]}格友军【{tempExplain}】{value1}{percent}";
+                //        break;
+                //    case "7":
+                //        conditionId = (value1 == "0" || string.IsNullOrEmpty(value1)) ? value2 : value1;
+                //        strAccumulate = string.Format("发动【{0}】后，触发【{1}】", tempExplain, getCondition(conditionId));
+                //        sbExplain.AppendFormat("{0}\r\n", strAccumulate);
+                //        continue;
+                //    case "9":
+                //        strAccumulate = string.Format("降低周遭{0}格敌军【{1}】{2}{3}", item["ValueLimit"].ToString(),
+                //            tempExplain, value1, percent);
+                //        sbExplain.AppendFormat("{0}\r\n", strAccumulate);
+                //        continue;
+                //    case "10":
+                //        conditionId = (value1 == "0" || string.IsNullOrEmpty(value1)) ? value2 : value1;
+                //        string str_gd = (value1 == "0" || string.IsNullOrEmpty(value1)) ? "高于" : "低于";
+                //        strAccumulate = string.Format("【{0}】{4}{1}{2}触发【{3}】", tempExplain,
+                //            item["ValueLimit"].ToString(), percent, getCondition(conditionId), str_gd);
+                //        sbExplain.AppendFormat("{0}\r\n", strAccumulate);
+                //        continue;
+                //}
+
+
+                //switch (item["EffectType"].ToString())
+                //{
+                //    case "0":
+                //    case "1":
+                //        strAccumulate = "每回合恢复";
+                //        explain = strAccumulate + item["value1"].ToString() + percent + "【" + tempExplain + "】  最多" +
+                //                  item["ValueLimit"].ToString() + percent;
+                //        break;
+                //    case "3":
+                //    case "4":
+                //    case "5":
+                //    case "6":
+                //    case "7":
+                //    case "8":
+                //        if (accumulate == "5")
+                //        {
+                //            explain = strAccumulate;
+                //            break;
+                //        }
+                //        explain = strAccumulate + item["value1"] + percent + "【" + tempExplain + "】  最多" +
+                //                  item["ValueLimit"].ToString() + percent;
+                //        break;
+                //    case "10":
+                //    case "24":
+                //    case "25":
+                //    case "29":
+                //    case "30":
+                //    case "33":
+                //        explain = $"【{tempExplain}】";
+                //        break;
+                //    case "9":
+                //        explain = "移动范围 +" + item["ValueLimit"].ToString() + "";
+                //        break;
+                //    case "14":
+                //        explain = $"【{tempExplain}】最低{value1}{percent} 最高{value2}{percent}";
+                //        break;
+                //    case "15":
+                //    case "16":
+                //    case "17":
+                //    case "18":
+                //        explain = $"【{tempExplain}】{value1}{percent}  最多{item["ValueLimit"]}{percent}";
+                //        break;
+                //    case "20":
+                //        if (accumulate == "0")
+                //        {
+                //            // random clear [value1, value2-1] debuff
+                //            // As Random.range(int min, int max) only generate numbers in [min, max)
+                //            int orig_max = Convert.ToInt32(value2) - 1;
+                //            int orig_min = Convert.ToInt32(value1);
+                //            string upper = Convert.ToString( orig_max > orig_min ? orig_max : orig_min);
+                //            explain = $"每回合随机解除【{value1}】到【{upper}】个负面状态";
+                //        }
+                //        else if (accumulate == "4")
+                //        {
+                //            explain = "每回合解除所有负面状态";
+                //        } else
+                //        {
+                //            explain = "未知清负方式，请联系作者";
+                //        }
+                //        break;
+                //    case "22":
+                //        explain = $"行动等级 +{item["ValueLimit"].ToString()} 神行";
+                //        break;
+                //    case "23":
+                //        explain = "连斩：击杀敌人後可再行动";
+                //        break;
+                //    case "26":
+                //        strAccumulate = $"保护周遭{item["ValueLimit"].ToString()}格同伴";
+                //        sbExplain.Append(strAccumulate);
+                //        break;
+                //    case "31":
+                //        explain = "毒体：百毒不侵";
+                //        break;
+                //    case "32":
+                //        sbExplain.AppendFormat("减少{0}{1} - {2}{3}伤害", value1, percent, value2, percent);
+                //        break;
+                //    default:
+                //        sbExplain.AppendFormat("弱鸡作者不明白EffectType={0} 是什么意思！", item["EffectType"].ToString());
+                //        break;
+
+                //}
+                //sbExplain.Append(explain);
+                //sbExplain.AppendLine();
             }
             return sbExplain.ToString();
         }
@@ -1216,6 +1357,63 @@ namespace xkfy_mod.Helper
 
             RadioList rl = new RadioList(cd);
             rl.ShowDialog();
+        }
+        #endregion
+
+        #region 解释战斗状态
+        internal string ExplainBattleCondition(string id)
+        {
+            // Assume Table BattleCondition and BattleCondition_D are loaded into memory
+            // Assume condition is organized as only 1 root with several children nodes
+            // each child node represents 1 effect
+            // root node contains condtition meta data like retained rounds.
+            DataRow conditionRoot = DataHelper.XkfyData.Tables["BattleCondition"].Select("ConditionID='" + id + "'").First();
+            DataRow[] conditionChildren = DataHelper.XkfyData.Tables["BattleCondition_D"].Select("ConditionID='" + id + "'");
+            StringBuilder explainBuilder = new StringBuilder();
+
+            
+            explainBuilder.Append("状态名称：").Append(conditionRoot["CondName"]).Append("\t\t");
+            explainBuilder.Append("状态类型：");
+            //0=数值型有益状态 1 = 数值型有害状态，2 = 一次性有益状态，3 = 一次性有害状态，4 = 持续型有益状态但发动一次后消失 5=持续型有害状态
+            string condType = conditionRoot["CondType"].ToString();
+            switch (condType)
+            {
+                case "0": explainBuilder.Append("数值型有益状态"); break;
+                case "1": explainBuilder.Append("数值型有害状态"); break;
+                case "2": explainBuilder.Append("一次性有益状态"); break;
+                case "3": explainBuilder.Append("一次性有害状态"); break;
+                case "4": explainBuilder.Append("持续型有益状态"); break;
+                case "5": explainBuilder.Append("持续型有害状态"); break;
+            }
+            explainBuilder.Append("\t\t");
+
+            explainBuilder.Append("状态目标：");
+            // 0出招者，1受招者敌人，2受招者友军，但实际1和2无区别
+            switch (conditionRoot["CondTarget"])
+            {
+                case "0": explainBuilder.Append("出招者"); break;
+                case "1": explainBuilder.Append("受招者敌人"); break;
+                case "2": explainBuilder.Append("受招者友军"); break;
+            }
+            explainBuilder.AppendLine();
+            explainBuilder.AppendFormat("持续回合：【{0}】到【{1}】回合\t", conditionRoot["MinTurn"], conditionRoot["MaxTurn"]).AppendLine();
+            explainBuilder.AppendFormat("回合结束时状态消失概率：{0}/100\t", conditionRoot["RemoveByTurn"]);
+            explainBuilder.AppendFormat("攻击后状态消失概率：{0}/100", conditionRoot["RemoveOnAttack"]).AppendLine();
+
+            int i = 0;
+            foreach (DataRow item in conditionChildren)
+            {
+                explainBuilder.AppendFormat("效果{0}: ", ++i);
+                string accumulate = item["Accumulate"].ToString();
+                string effectType = item["EffectType"].ToString();
+                string value1 = item["Value1"].ToString();
+                string value2 = item["Value2"].ToString();
+                string valueLimit = item["ValueLimit"].ToString();
+                string percent = item["Percent"].ToString() == "1" ? "%" : "点";
+                ExplainEffectTypes(explainBuilder, !debuffConditionTypes.Contains(condType), accumulate, effectType, value1, value2, valueLimit, percent);
+            }
+
+            return explainBuilder.ToString();
         }
         #endregion
     }

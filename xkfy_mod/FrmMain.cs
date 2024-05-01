@@ -9,6 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 using WeifenLuo.WinFormsUI.Docking;
+using xkfy_mod.Data;
 using xkfy_mod.Entity;
 using xkfy_mod.Helper;
 using xkfy_mod.Properties;
@@ -27,6 +28,7 @@ namespace xkfy_mod
 
         private void MainWnd_Load(object sender, EventArgs e)
         {
+            this.Text = $"Mod制作工具 v{Const.VERSION}";
             try
             {
                 IList<AppConfig> list = FileHelper.ReadAppConfig();
@@ -555,6 +557,11 @@ namespace xkfy_mod
         private void MenuItemPreviewStore_Click(object sender, EventArgs e)
         {
             new FrmPreviewStore().Show();
+        }
+
+        private void MenuItemGlobalSearch_Click(object sender, EventArgs e)
+        {
+            new FrmGlobalSearch().Show();
         }
     }
 }
