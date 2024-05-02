@@ -127,7 +127,7 @@ namespace xkfy_mod.Data
         /// NpcData.txt
         /// </summary>
         public static readonly string[] NpcDataRow = { "iID", "sNpcName", "sIntroduction" };
-        internal static readonly string VERSION = "2.27";
+        internal static readonly string VERSION = "2.26";
 
         #region 查询专用
         /// <summary>

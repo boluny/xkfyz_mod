@@ -87,7 +87,7 @@
             this.测试ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1780, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1891, 28);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -277,11 +277,11 @@
             // 
             this.dockPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dockPanel1.DockBackColor = System.Drawing.SystemColors.Control;
-            this.dockPanel1.DockLeftPortion = 300D;
+            this.dockPanel1.DockLeftPortion = 240D;
             this.dockPanel1.Location = new System.Drawing.Point(0, 28);
             this.dockPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.Size = new System.Drawing.Size(1780, 792);
+            this.dockPanel1.Size = new System.Drawing.Size(1891, 931);
             dockPanelGradient1.EndColor = System.Drawing.SystemColors.ControlLight;
             dockPanelGradient1.StartColor = System.Drawing.SystemColors.ControlLight;
             autoHideStripSkin1.DockStripGradient = dockPanelGradient1;
@@ -335,7 +335,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1780, 820);
+            this.ClientSize = new System.Drawing.Size(1891, 959);
             this.Controls.Add(this.dockPanel1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));

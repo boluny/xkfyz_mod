@@ -77,11 +77,11 @@
             this.rowState});
             this.dg1.ContextMenuStrip = this.dg1RightMenu;
             this.dg1.Location = new System.Drawing.Point(7, 126);
-            this.dg1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dg1.Margin = new System.Windows.Forms.Padding(4);
             this.dg1.Name = "dg1";
             this.dg1.RowHeadersWidth = 51;
             this.dg1.RowTemplate.Height = 23;
-            this.dg1.Size = new System.Drawing.Size(1357, 442);
+            this.dg1.Size = new System.Drawing.Size(1478, 470);
             this.dg1.TabIndex = 0;
             this.dg1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg1_CellDoubleClick);
             this.dg1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg1_CellValueChanged);
@@ -153,10 +153,10 @@
             this.gbQueryCon.Controls.Add(this.lblTips);
             this.gbQueryCon.Controls.Add(this.chkIsModify);
             this.gbQueryCon.Location = new System.Drawing.Point(7, -4);
-            this.gbQueryCon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbQueryCon.Margin = new System.Windows.Forms.Padding(4);
             this.gbQueryCon.Name = "gbQueryCon";
-            this.gbQueryCon.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbQueryCon.Size = new System.Drawing.Size(1357, 85);
+            this.gbQueryCon.Padding = new System.Windows.Forms.Padding(4);
+            this.gbQueryCon.Size = new System.Drawing.Size(1478, 85);
             this.gbQueryCon.TabIndex = 1;
             this.gbQueryCon.TabStop = false;
             // 
@@ -164,7 +164,7 @@
             // 
             this.lblTips.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTips.AutoSize = true;
-            this.lblTips.Location = new System.Drawing.Point(884, 51);
+            this.lblTips.Location = new System.Drawing.Point(1005, 51);
             this.lblTips.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTips.Name = "lblTips";
             this.lblTips.Size = new System.Drawing.Size(292, 15);
@@ -175,8 +175,8 @@
             // 
             this.chkIsModify.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkIsModify.AutoSize = true;
-            this.chkIsModify.Location = new System.Drawing.Point(1217, 50);
-            this.chkIsModify.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkIsModify.Location = new System.Drawing.Point(1338, 50);
+            this.chkIsModify.Margin = new System.Windows.Forms.Padding(4);
             this.chkIsModify.Name = "chkIsModify";
             this.chkIsModify.Size = new System.Drawing.Size(134, 19);
             this.chkIsModify.TabIndex = 8;
@@ -197,8 +197,8 @@
             // 
             this.btnCopyAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCopyAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCopyAdd.Location = new System.Drawing.Point(1265, 90);
-            this.btnCopyAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCopyAdd.Location = new System.Drawing.Point(1386, 90);
+            this.btnCopyAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnCopyAdd.Name = "btnCopyAdd";
             this.btnCopyAdd.Size = new System.Drawing.Size(100, 29);
             this.btnCopyAdd.TabIndex = 6;
@@ -210,8 +210,8 @@
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Location = new System.Drawing.Point(1049, 90);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Location = new System.Drawing.Point(1170, 90);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 29);
             this.btnAdd.TabIndex = 5;
@@ -223,8 +223,8 @@
             // 
             this.btnQuery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnQuery.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQuery.Location = new System.Drawing.Point(1157, 90);
-            this.btnQuery.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQuery.Location = new System.Drawing.Point(1278, 90);
+            this.btnQuery.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(100, 29);
             this.btnQuery.TabIndex = 4;
@@ -241,10 +241,10 @@
             this.panel1.Controls.Add(this.gbZhanDou);
             this.panel1.Controls.Add(this.lblMsg);
             this.panel1.Controls.Add(this.txtExplain);
-            this.panel1.Location = new System.Drawing.Point(7, 576);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(7, 604);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1357, 241);
+            this.panel1.Size = new System.Drawing.Size(1478, 241);
             this.panel1.TabIndex = 2;
             // 
             // lblExplainRed
@@ -266,10 +266,10 @@
             this.gbZhanDou.Controls.Add(this.label3);
             this.gbZhanDou.Controls.Add(this.lblFale);
             this.gbZhanDou.Controls.Add(this.label2);
-            this.gbZhanDou.Location = new System.Drawing.Point(747, 9);
-            this.gbZhanDou.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbZhanDou.Location = new System.Drawing.Point(868, 9);
+            this.gbZhanDou.Margin = new System.Windows.Forms.Padding(4);
             this.gbZhanDou.Name = "gbZhanDou";
-            this.gbZhanDou.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbZhanDou.Padding = new System.Windows.Forms.Padding(4);
             this.gbZhanDou.Size = new System.Drawing.Size(604, 222);
             this.gbZhanDou.TabIndex = 8;
             this.gbZhanDou.TabStop = false;
@@ -278,7 +278,7 @@
             // txtWin
             // 
             this.txtWin.Location = new System.Drawing.Point(137, 76);
-            this.txtWin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtWin.Margin = new System.Windows.Forms.Padding(4);
             this.txtWin.Multiline = true;
             this.txtWin.Name = "txtWin";
             this.txtWin.Size = new System.Drawing.Size(457, 138);
@@ -352,19 +352,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtExplain.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtExplain.Location = new System.Drawing.Point(9, 28);
-            this.txtExplain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtExplain.Margin = new System.Windows.Forms.Padding(4);
             this.txtExplain.Multiline = true;
             this.txtExplain.Name = "txtExplain";
             this.txtExplain.ReadOnly = true;
             this.txtExplain.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtExplain.Size = new System.Drawing.Size(729, 203);
+            this.txtExplain.Size = new System.Drawing.Size(850, 203);
             this.txtExplain.TabIndex = 10;
             // 
             // btnDebug
             // 
             this.btnDebug.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDebug.Location = new System.Drawing.Point(941, 90);
-            this.btnDebug.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDebug.Location = new System.Drawing.Point(1062, 90);
+            this.btnDebug.Margin = new System.Windows.Forms.Padding(4);
             this.btnDebug.Name = "btnDebug";
             this.btnDebug.Size = new System.Drawing.Size(100, 29);
             this.btnDebug.TabIndex = 10;
@@ -376,8 +376,8 @@
             // btnEditTalkGroup
             // 
             this.btnEditTalkGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEditTalkGroup.Location = new System.Drawing.Point(941, 90);
-            this.btnEditTalkGroup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditTalkGroup.Location = new System.Drawing.Point(1062, 90);
+            this.btnEditTalkGroup.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditTalkGroup.Name = "btnEditTalkGroup";
             this.btnEditTalkGroup.Size = new System.Drawing.Size(100, 29);
             this.btnEditTalkGroup.TabIndex = 10;
@@ -392,7 +392,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1373, 822);
+            this.ClientSize = new System.Drawing.Size(1494, 850);
             this.Controls.Add(this.btnEditTalkGroup);
             this.Controls.Add(this.btnDebug);
             this.Controls.Add(this.label4);
@@ -404,7 +404,7 @@
             this.Controls.Add(this.dg1);
             this.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Almighty";
             this.Text = "Almighty";
             this.Load += new System.EventHandler(this.Almighty_Load);
